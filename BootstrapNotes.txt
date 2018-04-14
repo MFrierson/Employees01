@@ -1,0 +1,91 @@
+
+Prerequisites:
+
+
+- Intall Visual Studio Code
+
+- Intall the latest version of Git
+	(for git bash)
+
+- Intall the latest version of Nodejs. NPM
+
+
+
+
+
+Bootstrap 4 :
+
+1. Create a new project folder with a new name
+
+2. Copy the src folder, gulpfile.js, and package.json from bootstrap4_orig to the new project folder
+
+3. Open VS Code --> Open the new project folder
+
+4. Install the dependencies for bootstrap - run:  npm install
+	(this may take about 30sec - 1min)
+
+5. run: gulp
+	(this should pull in the latest js files, and start an automatic update of the browser)
+	(and run the local server on http://localhost:3000)
+
+
+
+
+
+
+Bootstrap 4 beta:
+
+Starter pack install from download:
+
+
+1.Create a new project folder
+
+2. Copy the src folder, gulpfile.js, and package.json from bs4starter-master
+   over to your new project folder
+
+3. Open git bash, and navigate to your project folder
+
+4. Install the dependencies for bootstrap - run:  npm install
+	(this may take about 30sec - 1min)
+
+
+5. run the builtin web server: npm start
+
+
+6. the server runs in browser as: http://localhost:3000/
+
+
+
+
+
+
+Bootstrap 3:
+
+The only file needed in the css folder is: bootstrap.min.css
+
+The only file needed in the js folder is bootstrap.min.js
+
+Keep all of the files in the fonts folder
+
+
+
+Wrap everything 'inside' the body in a container for the formatting to show correctly:
+
+
+<body>
+<div class="container">
+
+<h1>Hello, world!</h1>
+    
+ </div>
+
+</body>
+
+
+
+
+
+
+Adding images: 
+
+Try to use images from Pexels.com

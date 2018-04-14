@@ -1,0 +1,13 @@
+
+
+
+Starter HTML code:
+
+press:  !+enter
+
+
+
+
+Generate a number of words:
+
+Lorem + (some number)  (example:  Lorem15 = generates 15 words)
