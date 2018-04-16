@@ -2,3 +2,10 @@ This is another test of git.
 Please disregaurd this test. 
 If this wasnt a test, you might have been informed with somthing like "This is not a test".
 However, this is in fact, just a test.
+Thank you for your time.
+
+
+
+This is another test.
+I refuse to go through what the last guy just did.
+Test!!
