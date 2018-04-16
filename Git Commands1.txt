@@ -1,0 +1,71 @@
+
+
+Git commmands:
+
+
+https://github.com/login
+
+
+show version:  git --version
+
+
+change user name:  git config --global user.name "Mac"
+
+change user email:  git config --global user.email "youremail@address.com"
+
+
+git clone https://github.com/.../...git
+	(this command clones the git repository to the local computer)
+	(where the "https:......" represents the copied link from git)
+
+
+Change Directory:  cd /c/Users/Bruce/Desktop/Projects
+(you can drag the target folderin too)
+
+
+To update local repository with changes from Github: git pull
+((or) git pull origin)
+
+
+Create Directory: mkdir "new folder"
+
+
+
+
+
+git status
+	(this shows whether your branch is up to date with the origin/master)
+
+
+git add index.html
+	(this will add index.html file to the staging area)
+	(this makes the file(s) added to be available to be commited)
+
+
+
+git commit
+	(this commits any changes that are currently in the staging area)
+	(on the local machine only!)
+
+or
+
+git commit -m 'some message'
+	(where -m stands for message,
+	and '' is the message to go long with the commit)
+	(on the local machine only!)
+
+
+git log
+	(shows all of the history of commits)
+
+
+
+git push
+	(pushes the commited items to git hub)
+
+
+
+git difftool
+	(shows changes between local versions of the file)
+
+
