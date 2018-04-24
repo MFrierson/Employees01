@@ -1,0 +1,24 @@
+<div>
+ <h1>{{title}}</h1> 
+</div>
+
+<div>
+    <h2>Data Binding Test</h2>
+    <form>
+        <div>
+            <label for="title"><strong>Title:</strong> </label><br>
+            <input type="text" [(ngModel)]="title" name="title">
+          </div>
+    </form> 
+</div>
+ 
+
+
+
+
+
+<h1>Posts</h1>
+<div *ngFor="let post of posts">
+    <h4>{{post.id}} - {{post.name}} </h4>
+    <p>{{post.expertise}}</p>
+</div>
