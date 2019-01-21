@@ -1,24 +1,176 @@
-<div>
- <h1>{{title}}</h1> 
+<!-- EMPLOYEE PAGE HEADER -->
+<div class="container">
+  <section id="employee-section-header">  
+    <div class="container"id="employee-header-inner">    
+      <div class="col text-center" >
+        <div class="p-5">
+            <h1 class="display-4">Employee Registration</h1>
+        </div>
+      </div>    
+    </div>  
+  </section>
 </div>
 
-<div>
-    <h2>Data Binding Test</h2>
-    <form>
-        <div>
-            <label for="title"><strong>Title:</strong> </label><br>
-            <input type="text" [(ngModel)]="title" name="title">
+<!-- EMPLOYEE LIST SECTION -->
+<div class="container">
+<section id="employee-section-main">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="section-title">
+        <h2>Employee List</h2>
+        </div> 
+      <br>
+      <div class="list-group">
+        <div *ngFor="let post of posts">
+          <a href="#detail-section" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+              {{post.name}}
+              <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-outline-secondary" (click)="getCurrentID(post)"
+                  data-toggle="modal" data-target="#empDetailModal">
+                  View
+                </button>
+                <button type="button" class="btn btn-outline-secondary" (click)="deleteCurrentPost(post)">Delete</button>
+              </div>
+            </a>
+        </div>
+      </div>
+      <hr>
+      <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#newUserModal">
+        Add New Employee
+      </button>     
+      <hr>
+<!-- EMPLOYEE DETAIL SECTION -->
+      <br>
+      <div id="detail-section" class="section-title"> 
+        <h2>Employee Detail</h2>
+      </div> 
+  </div>
+  </div>
+  <br>
+  <div class="row justify-content-center">
+    <div class="col-8 employee-detail-main">
+      <div class="row">
+        <div class="col-3">
+            <div class="alert alert-secondary" role="alert">
+              ID:     {{currentEmpl.id}}
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="alert alert-secondary" role="alert">
+              Name:     {{currentEmpl.name}} 
+            </div>
+        </div>        
+      </div>
+      <div class="row">
+        <div class="col-8">
+          <div class="alert alert-secondary" role="alert">
+              Designation:      {{currentEmpl.designation}}
           </div>
-    </form> 
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-10">
+            <div class="alert alert-secondary" role="alert">
+                Expertise:      {{currentEmpl.expertise}}
+            </div>
+          </div>
+        </div>
+    </div>
+  </div> 
+</section>
 </div>
- 
 
+<!-- New User Entry Modal -->
+<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><i>Add New Employee</i></h5>          
+        </div>
+        <div class="modal-body">            
+          <form (ngSubmit)="onSubmit()" [ngFormOptions]="{ updateOn: 'submit'}" >
+              <div class="form-group">
+                  <label for="nameEntry">Name:</label>
+                  <input type="text" class="form-control" id="formNameEntry" required 
+                  [(ngModel)]="newEmpl.name" name="name" placeholder="Mac Dogg">
+              </div>
+              <div class="form-group">
+                  <label for="designationEntry">Designation:</label>
+                  <input type="text" class="form-control" id="formDesignationEntry" required
+                  [(ngModel)]="newEmpl.designation" name="designation" placeholder="Chief">
+              </div>
+              <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Expertise:</label>
+                  <textarea class="form-control" id="formExpertiseEntry" rows="3" 
+                  [(ngModel)]="newEmpl.expertise" name="expertise" placeholder="Programmer to the stars!"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+            Pleaes fill out all fields        
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-
-
-<h1>Posts</h1>
-<div *ngFor="let post of posts">
-    <h4>{{post.id}} - {{post.name}} </h4>
-    <p>{{post.expertise}}</p>
+<!-- Data Binding Test -->
+<div class="container">
+  <br>  
+  <div>
+        <h1>{{title}}</h1>
+    </div>
+    <div>
+        <h2>Data Binding Test:  {{newEmpl.name}} {{newEmpl.designation}}</h2>
+        <hr>
+        <h2>{{newEmpl.expertise}}</h2>
+        <form>
+            <div>
+                <label for="title"><strong>Title:</strong> </label><br>
+                <input type="text" [(ngModel)]="title" name="title">
+            </div>
+        </form>
+    </div>
 </div>
+<!-- Employee Detail Modal -->
+<div class="modal fade" id="empDetailModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Employee Detail</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">          
+          <div class="col">
+              <div class="alert alert-secondary" role="alert">
+                Name:     {{currentEmpl.name}} 
+              </div>
+          </div>                 
+        </div>
+        <div class="row">          
+          <div class="col">
+              <div class="alert alert-secondary" role="alert">
+                Designation:      {{currentEmpl.designation}} 
+              </div>
+          </div>                 
+        </div>
+        <div class="row">          
+          <div class="col">
+              <div class="alert alert-secondary" role="alert">
+                Expertise:      {{currentEmpl.expertise}} 
+              </div>
+          </div>                 
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Edit</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>        
+      </div>
+    </div>
+  </div>
+</div>
+

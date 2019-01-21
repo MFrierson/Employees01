@@ -18,3 +18,9 @@ Sweet. Looks like its working.
 Let's see if this is still working
 
 This appears to still be working.
+
+
+
+To start in Angular - npm start 
+
+Right click on the application root folder -> Run as -> Java Application
